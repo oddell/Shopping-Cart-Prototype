@@ -16,18 +16,18 @@ namespace ShoppingCart.ViewModel
         private decimal _totalCost;
         private decimal _totalCostBeforeDiscount;
         private string _discountCode;
-        private Product _selectedProduct;
+        private IProduct _selectedProduct;
         private int _selectedQuantity;
 
         /// <summary>
         /// Gets or sets the list of products.
         /// </summary>
-        public ObservableCollection<Product> Products { get; set; }
+        public ObservableCollection<IProduct> Products { get; set; }
 
         /// <summary>
         /// Gets or sets the list of basket items.
         /// </summary>
-        public ObservableCollection<BasketItem> BasketItems { get; set; }
+        public ObservableCollection<IBasketItem> BasketItems { get; set; }
 
         /// <summary>
         /// Gets the command to add a product to the basket.
@@ -55,7 +55,7 @@ namespace ShoppingCart.ViewModel
             }
             _basket = basket;
 
-            Products = new ObservableCollection<Product>
+            Products = new ObservableCollection<IProduct>
                 {
                     new Product(Guid.NewGuid(), "Product 1", 10.0m),
                     new Product(Guid.NewGuid(), "Product 2", 20.0m),
@@ -63,7 +63,7 @@ namespace ShoppingCart.ViewModel
                 };
 
             SelectedQuantity = 1;
-            BasketItems = new ObservableCollection<BasketItem>();
+            BasketItems = new ObservableCollection<IBasketItem>();
 
             AddToBasketCommand = new RelayCommand(AddToBasket);
             ApplyDiscountCommand = new RelayCommand(ApplyDiscount);
@@ -72,7 +72,7 @@ namespace ShoppingCart.ViewModel
         /// <summary>
         /// Gets or sets the selected product.
         /// </summary>
-        public Product SelectedProduct
+        public IProduct SelectedProduct
         {
             get => _selectedProduct;
             set
