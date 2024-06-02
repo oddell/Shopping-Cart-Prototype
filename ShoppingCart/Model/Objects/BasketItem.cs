@@ -26,6 +26,9 @@ namespace ShoppingCart.Model.Objects
             Product = product;
             Quantity = quantity;
         }
+
+        /// <inheritdoc/>
+        public decimal TotalPrice => Product.Price * Quantity;
     }
 }
 

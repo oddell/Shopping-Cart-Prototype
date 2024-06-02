@@ -14,5 +14,10 @@
         /// Gets or sets the quantity of the product in the basket item.
         /// </summary>
         int Quantity { get; set; }
+
+        /// <summary>
+        /// Gets the total price of the basket item.
+        /// </summary>
+        decimal TotalPrice { get; }
     }
 }

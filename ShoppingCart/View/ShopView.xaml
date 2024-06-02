@@ -50,7 +50,7 @@
                 <GridView>
                     <GridViewColumn Header="Product Name" DisplayMemberBinding="{Binding Product.Name}" />
                     <GridViewColumn Header="Quantity" DisplayMemberBinding="{Binding Quantity}" />
-                    <GridViewColumn Header="Total Price" DisplayMemberBinding="{Binding Product.Price, StringFormat='{}{0:C}', ConverterCulture='en-GB'}" />
+                    <GridViewColumn Header="Total Price" DisplayMemberBinding="{Binding TotalPrice, StringFormat='{}{0:C}', ConverterCulture='en-GB'}" />
                 </GridView>
             </ListView.View>
         </ListView>
