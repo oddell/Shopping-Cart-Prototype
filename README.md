@@ -1,5 +1,8 @@
 # ShoppingCart
 
+## Quickstart
+https://github.com/oddell/Shopping-Cart-Prototype/assets/66199940/14ea8885-013f-429f-8174-08538edd9c57
+
 ## Overview
 
 The ShoppingCart application is developed in .NET Framework 4.7.2. The application includes the following functionalities:
@@ -23,3 +26,6 @@ Beyond the scope of the task it would make sense to:
 - Better validation for the quantity input
 - Tidy up of UI
 - Complete purchase functionality
+
+
+
