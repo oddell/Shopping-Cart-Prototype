@@ -23,7 +23,7 @@
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" />
-                    <GridViewColumn Header="Price" DisplayMemberBinding="{Binding Price}" />
+                    <GridViewColumn Header="Price" DisplayMemberBinding="{Binding Price, StringFormat='{}{0:C}'}" />
                 </GridView>
             </ListView.View>
         </ListView>

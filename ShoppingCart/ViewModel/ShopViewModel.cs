@@ -101,6 +101,9 @@ namespace ShoppingCart.ViewModel
             }
         }
 
+        /// <summary>
+        /// Gets or sets the selected quantity of the product.
+        /// </summary>
         public int SelectedQuantity
         {
             get { return _selectedQuantity; }
@@ -113,7 +116,6 @@ namespace ShoppingCart.ViewModel
                 else
                 {
                     _selectedQuantity = 1;
-
                 }
 
                 OnPropertyChanged(nameof(SelectedQuantity));

@@ -5,27 +5,26 @@ namespace ShoppingCart.Model.Objects
     /// <summary>
     /// Represents a product in the shopping cart
     /// </summary>
-    public class Product
+    public class Product : IProduct
     {
-        /// <summary>
-        /// The unique identifier of the product
-        /// </summary>
+        /// <inheritdoc/>
         public Guid Id { get; set; }
 
-        /// <summary>
-        /// The name of the product
-        /// </summary>
+        /// <inheritdoc/>
         public string Name { get; set; }
 
-        /// <summary>
-        /// The price of the product
-        /// </summary>
+        /// <inheritdoc/>
         public decimal Price { get; set; }
 
-        /// <summary>
-        /// The quantity of the product
-        /// </summary>
+        /// <inheritdoc/>
         public int Quantity { get; set; }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Product"/> class.
+        /// </summary>
+        /// <param name="id">The unique identifier of the product.</param>
+        /// <param name="name">The name of the product.</param>
+        /// <param name="price">The price of the product.</param>
         public Product(Guid id, string name, decimal price)
         {
             Id = id;
