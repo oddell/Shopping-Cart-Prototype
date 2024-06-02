@@ -12,7 +12,7 @@ namespace ShoppingCart.ViewModel
     /// </summary>
     public class ShopViewModel : INotifyPropertyChanged
     {
-        private Basket _basket = new Basket();
+        private IBasket _basket;
         private decimal _totalCost;
         private decimal _totalCostBeforeDiscount;
         private string _discountCode;
@@ -47,8 +47,14 @@ namespace ShoppingCart.ViewModel
         /// <summary>
         /// Initializes a new instance of the <see cref="ShopViewModel"/> class.
         /// </summary>
-        public ShopViewModel()
+        public ShopViewModel(IBasket basket)
         {
+            if (basket == null)
+            {
+                throw new ArgumentNullException(nameof(basket));
+            }
+            _basket = basket;
+
             Products = new ObservableCollection<Product>
                 {
                     new Product(Guid.NewGuid(), "Product 1", 10.0m),
@@ -56,6 +62,7 @@ namespace ShoppingCart.ViewModel
                     new Product(Guid.NewGuid(), "Product 3", 30.0m)
                 };
 
+            SelectedQuantity = 1;
             BasketItems = new ObservableCollection<BasketItem>();
 
             AddToBasketCommand = new RelayCommand(AddToBasket);

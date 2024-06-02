@@ -14,15 +14,19 @@ namespace ShoppingCart.Model.Objects
         private readonly List<BasketItem> _items = new List<BasketItem>();
         private decimal _discountPercentage = 0;
 
+        public Basket() 
+        {
+            // Unity CTOR
+        }
 
-        /// <summary>
-        /// Adds a product to the basket with the specified quantity.
-        /// </summary>
-        /// <param name="product">The product to add.</param>
-        /// <param name="quantity">The quantity of the product to add.</param>
-        /// <exception cref="ArgumentNullException">Thrown when the product is null.</exception>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when the quantity is less than or equal to zero.</exception>
-        public void AddProduct(Product product, int quantity)
+            /// <summary>
+            /// Adds a product to the basket with the specified quantity.
+            /// </summary>
+            /// <param name="product">The product to add.</param>
+            /// <param name="quantity">The quantity of the product to add.</param>
+            /// <exception cref="ArgumentNullException">Thrown when the product is null.</exception>
+            /// <exception cref="ArgumentOutOfRangeException">Thrown when the quantity is less than or equal to zero.</exception>
+            public void AddProduct(Product product, int quantity)
         {
             if (product == null)
             {
