@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace ShoppingCart.Model.Objects
 {
+    /// <summary>
+    /// Basket that contains a list of items.
+    /// </summary>
     public class Basket
     {
-        private const string DiscountCode = "DISCOUNT10";
+        private const string DiscountCode = "288";
         private List<BasketItem> _items = new List<BasketItem>();
         private decimal _discountPercentage = 0;
 

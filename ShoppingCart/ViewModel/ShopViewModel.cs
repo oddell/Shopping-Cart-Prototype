@@ -17,6 +17,7 @@ namespace ShoppingCart.ViewModel
         private decimal _totalCostBeforeDiscount;
         private string _discountCode;
         private Product _selectedProduct;
+        private int _selectedQuantity;
 
         /// <summary>
         /// Gets or sets the list of products.
@@ -100,6 +101,25 @@ namespace ShoppingCart.ViewModel
             }
         }
 
+        public int SelectedQuantity
+        {
+            get { return _selectedQuantity; }
+            set
+            {
+                if (int.TryParse(value.ToString(), out int quantity) && quantity > 0)
+                {
+                    _selectedQuantity = quantity;
+                }
+                else
+                {
+                    _selectedQuantity = 1;
+
+                }
+
+                OnPropertyChanged(nameof(SelectedQuantity));
+            }
+        }
+
         /// <summary>
         /// Gets or sets the discount code to apply to the basket.
         /// </summary>
@@ -117,7 +137,7 @@ namespace ShoppingCart.ViewModel
         {
             if (parameter is Product product)
             {
-                _basket.AddProduct(product, 1);
+                _basket.AddProduct(product, SelectedQuantity);
                 RefreshBasketItems();
                 UpdateTotalCost();
             }
