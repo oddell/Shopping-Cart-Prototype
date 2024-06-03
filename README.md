@@ -19,6 +19,7 @@ Given more time I would
 - Expand the unit tests to higher coverage across more files and place them in their own project
 - Use AutoMoq for future more complex objects and services
 - Extract relevant business logic in viewmodels into singleton services
+- Use the DI infrastructure to inject a logger and use in relevant places
 
 ## Expected Features
 Beyond the scope of the task it would make sense to:
